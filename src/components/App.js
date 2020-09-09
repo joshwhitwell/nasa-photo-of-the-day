@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../App.css'
 import ImageBox from './ImageBox'
-import ReadMore from './ReadMore'
 import { BASE_URL, API_KEY } from '../constants/index.js'
 
 //App Component
@@ -29,9 +28,6 @@ function App() {
       <div className='container'>
         {
           <ImageBox apod={apod}/>
-        }
-        {
-          <ReadMore />
         }
       </div>
     </div>
