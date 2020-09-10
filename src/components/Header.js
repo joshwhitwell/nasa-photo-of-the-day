@@ -1,4 +1,4 @@
-//Import React
+//Import Dependencies
 import React from 'react'
 
 //Header Component

@@ -12,11 +12,14 @@ import { BASE_URL, API_KEY } from '../constants/index.js'
 
 //App Component
 function App() {
-  //Set State
+  //Set State to Hold Axios Data Call
   const [apod, setApod] = useState({})
+  //Set State to Hold Search Bar Value
   const [date, setDate] = useState('')
 
-  //Axios Call on First Render of DOM
+  //Axios Call on First Render and Date Change
+  //Base URL and API Key imported from constants/index.js
+  //Date supplied from State set from Input Field in ImageBox.js
   useEffect(() => {
     axios
       .get(`${BASE_URL}?api_key=${API_KEY}&date=${date}`)
@@ -28,6 +31,7 @@ function App() {
         })
   }, [ date ])
 
+  //Returns Header Component and ImageBox Component
   return (
     <div className='App'>
       <Header />
