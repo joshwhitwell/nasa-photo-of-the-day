@@ -10,6 +10,7 @@ export default function ImageBox(props) {
     const { apod, date, setDate } = props
     //Set Details State to Hold ReadMore Component
     const [details, setDetails] = useState(true)
+    const [inputValue, setInputValue] = useState('')
 
     //ReadMore Helper Functions
     function openReadMore() {
@@ -22,24 +23,31 @@ export default function ImageBox(props) {
 
     //Input Field Event Handler
     const onChange = (event) => {
-        setDate(event.target.value)
+        setInputValue(event.target.value)
     }
+
+    const onSubmit = (event) => {
+        event.preventDefault()
+        setDate(inputValue)
+        setInputValue('')
+    }
+
 
     //Return ImageBox Component
     return (
         <div className='container'>
-            <form>
+            <form onSubmit={onSubmit}>
                 <label for='date'>Change Date: </label>
                 <input
                     type="text"
                     placeholder='YYYY-MM-DD'
                     onChange={onChange} //Sets date slice to input
-                    value={date} //Sets input field value to date slice
+                    value={inputValue}//Sets input field value to date slice
                 />
             </form>
             <h2>Photo on {apod.date}: {apod.title}</h2>
             <img src={apod.url} alt={apod.title} />
-            <p>©{apod.copyright}</p>
+            {apod.copyright ? <p>©{apod.copyright}</p> : <p>© NASA</p>}
             {//On Click Sets Details to False and Renders ReadMore Component
                 details ?
                     <p>Read More <button onClick={() => { openReadMore() }}>+</button></p>

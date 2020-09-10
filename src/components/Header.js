@@ -13,17 +13,21 @@ const StyledHeader = styled.div`
         display: flex;
         justify-content: space-between;
 
+        img {
+            margin: 2%;
+        }
+
         nav {
         display: flex;
-        width: 30%;
         justify-content: center;
+        width: 30%;
         align-items: center;
-        border: 1px solid black;
+        /* border: 1px solid black; */
 
         a {
         background-color: ${pr => pr.theme.primaryColor};
         color: white;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         text-decoration: none;
         margin: 0 5%;
         padding: 3%;
@@ -41,7 +45,7 @@ const StyledHeader = styled.div`
     }
 
     h1 {
-        border: 1px solid black;
+        /* border: 1px solid black; */
         text-align: center;
     }
 `
