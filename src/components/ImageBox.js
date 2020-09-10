@@ -1,8 +1,22 @@
 //Import Dependencies
 import React, { useState } from 'react'
+import styled from 'styled-components'
 
 //Import Components
 import ReadMore from './ReadMore'
+
+//Styled ImageBox Component
+const StyledImageBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    margin-top: 2.5%;
+
+    form, img, h2, p {
+        margin-bottom: 2.5%;
+    }
+`
 
 //ImageBox Component
 export default function ImageBox(props) {
@@ -35,7 +49,7 @@ export default function ImageBox(props) {
 
     //Return ImageBox Component
     return (
-        <div className='container'>
+        <StyledImageBox>
             <form onSubmit={onSubmit}>
                 <label for='date'>Change Date: </label>
                 <input
@@ -53,6 +67,6 @@ export default function ImageBox(props) {
                     <p>Read More <button onClick={() => { openReadMore() }}>+</button></p>
                     : <ReadMore explanation={apod.explanation} closeReadMore={closeReadMore} />
             }
-        </div>
+        </StyledImageBox>
     )
 }

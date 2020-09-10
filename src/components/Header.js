@@ -8,29 +8,27 @@ const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0 2%;
 
     div {
         display: flex;
         justify-content: space-between;
 
-        img {
-            margin: 2%;
-        }
-
         nav {
         display: flex;
-        justify-content: center;
-        width: 30%;
+        justify-content: flex-end;
+        width: 75%;
         align-items: center;
-        /* border: 1px solid black; */
 
         a {
         background-color: ${pr => pr.theme.primaryColor};
         color: white;
-        /* border: 1px solid black; */
+        border-radius: 10px;
         text-decoration: none;
-        margin: 0 5%;
-        padding: 3%;
+        font-weight: bold;
+        margin: 0 2%;
+        padding: 2%;
+        transition: all 0.3s ease-in-out;
 
             &:visited {
             color: white;
@@ -39,14 +37,11 @@ const StyledHeader = styled.div`
             &:hover {
             background-color: white;
             color: ${pr => pr.theme.primaryColor};
+            border: 2px solid ${pr => pr.theme.primaryColor};
+            transition: all 0.3s ease-in-out;
                 }
             }
         }    
-    }
-
-    h1 {
-        /* border: 1px solid black; */
-        text-align: center;
     }
 `
 
@@ -58,7 +53,7 @@ export default function Header() {
                 <img src={logo} alt='nasa logo' />
                 <nav>
                     <a href='https://www.nasa.gov/'>NASA</a>
-                    <a href='Subscribe'>Subscribe</a>
+                    <a href='Subscribe'>SUBSCRIBE</a>
                 </nav>
             </div>
             <h1>NASA Photo of the Day</h1>
