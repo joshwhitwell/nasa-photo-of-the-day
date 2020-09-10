@@ -1,5 +1,7 @@
+//Import Dependencies
 import React from 'react'
 
+//ReadMore Component
 export default function ReadMore({ explanation, closeReadMore }) {
     return (
         <div className='container'>
