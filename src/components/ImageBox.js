@@ -69,6 +69,7 @@ export default function ImageBox(props) {
         setInputValue(event.target.value)
     }
 
+    //On Enter sets the input value to state; resets input value
     const onSubmit = (event) => {
         event.preventDefault()
         setDate(inputValue)
@@ -80,7 +81,7 @@ export default function ImageBox(props) {
     return (
         <StyledImageBox>
             <form onSubmit={onSubmit}>
-                <label for='date'>Change Date: </label>
+                <label>Change Date: </label>
                 <input
                     type="text"
                     placeholder='YYYY-MM-DD'
