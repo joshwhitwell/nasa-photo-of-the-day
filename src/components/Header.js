@@ -8,7 +8,7 @@ const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 2%;
+    padding: 2%;
 
     div {
         display: flex;
@@ -28,7 +28,7 @@ const StyledHeader = styled.div`
         font-weight: bold;
         margin: 0 2%;
         padding: 2%;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.1s ease-in-out;
 
             &:visited {
             color: white;

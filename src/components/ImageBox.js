@@ -10,18 +10,47 @@ const StyledImageBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 5%;
-    margin-top: 2.5%;
+    padding: 2.5% 5%;
+    margin: 2.5%;
+    border: 1px solid #d2d2d2;
+    box-shadow: 0px 1px 6px -2px #807f7f;
+    border-radius: 10px;
 
     form, img, h2, p {
         margin-bottom: 2.5%;
+    }
+
+    img {
+        border-radius: 8px;
+    }
+
+    input {
+        border-color: ${pr => pr.theme.primaryColor};
+        border-radius: 10px;
+        outline: none;
+    }
+
+    button {
+        border-color: ${pr => pr.theme.primaryColor};
+        width: 25px;
+        border-radius: 8px;
+        font-weight: bold;
+        background-color: white;
+        color: ${pr => pr.theme.primaryColor};
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+            background-color: ${pr => pr.theme.tertiaryColor};
+            color: white;
+            transition: all 0.1s ease-in-out;
+        }
     }
 `
 
 //ImageBox Component
 export default function ImageBox(props) {
     //Receives apod date and setDate from App
-    const { apod, date, setDate } = props
+    const { apod, setDate } = props
     //Set Details State to Hold ReadMore Component
     const [details, setDetails] = useState(true)
     const [inputValue, setInputValue] = useState('')

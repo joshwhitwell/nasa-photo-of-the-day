@@ -36,7 +36,7 @@ function App() {
     <div className='App'>
       <Header />
       <div className='container'>
-          <ImageBox apod={apod} date={date} setDate={setDate}/>
+          <ImageBox apod={apod} setDate={setDate}/>
       </div>
     </div>
   )
